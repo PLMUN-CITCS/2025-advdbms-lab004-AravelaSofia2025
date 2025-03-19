@@ -1,13 +1,13 @@
--- Select the database
+-- Ensure the database exists before using it
 CREATE DATABASE IF NOT EXISTS UniversityDB;
 USE UniversityDB;
 
--- Drop the Students table if it already exists
-SET FOREIGN_KEY_CHECKS = 0; 
+-- Drop the table to avoid conflicts (with FK check)
+SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS Students;
 SET FOREIGN_KEY_CHECKS = 1;
 
--- Create the Students table
+-- Create the Students table with exact structure
 CREATE TABLE Students (
     StudentID INT AUTO_INCREMENT PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
@@ -15,8 +15,3 @@ CREATE TABLE Students (
     EnrollmentDate DATE NOT NULL
 );
 
--- Verify table structure
-DESC Students;
-
--- Display the table contents
-SELECT * FROM Students;
