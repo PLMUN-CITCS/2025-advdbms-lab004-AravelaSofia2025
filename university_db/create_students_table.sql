@@ -1,4 +1,5 @@
 -- Select the database
+CREATE DATABASE IF NOT EXISTS UniversityDB;
 USE UniversityDB;
 
 -- Drop the Students table if it already exists
